@@ -1,4 +1,4 @@
-import manager as manager
+
 from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.chrome import ChromeDriverManager
@@ -13,6 +13,12 @@ print(driver1.current_url)
 sleep(2)
 driver1.find_element(webdriver.common.by.By.XPATH, '//*[@id="nav-link-accountList"]').click()
 sleep(2)
+email_elem = driver1.find_element(webdriver.common.by.By.NAME, 'email')
+print(email_elem.is_displayed())
+print(email_elem.is_enabled())
+email_elem.send_keys('abc@gmail.com')
+driver1.find_element(webdriver.common.by.By.ID, 'continue').click()
+sleep(3)
 driver1.get('https://google.com/')
 driver1.back()
 sleep(2)
