@@ -33,5 +33,7 @@ sleep(5)
 ln_driver.execute_script('window.scrollBy(0,document.body.scrollHeight)')
 sleep(5)
 
+print(ln_driver.get_cookies())
 #Close the Browsers
 ln_driver.quit()
+
